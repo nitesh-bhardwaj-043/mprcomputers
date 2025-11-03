@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Mdl_complaints extends CI_Model
+class Mdl_dealership extends CI_Model
 {
     private $table;
     function __construct()
     {
         parent::__construct();
-        $this->table = "complaints";
+        $this->table = "dealership";
     }
     function view_data($where=null,$select="*")
     {
@@ -19,18 +19,6 @@ class Mdl_complaints extends CI_Model
     function add_data($data)
     {
         $a=$this->db->insert($this->table,$data);
-        return $this->db->affected_rows($a);
-    }
-    function update_data($where,$data)
-    {
-        $this->db->where($where);
-        $a=$this->db->update($this->table,$data);
-        return $this->db->affected_rows($a);
-    }
-    function delete_data($where)
-    {
-        $this->db->where($where);
-        $a=$this->db->delete($this->table);
         return $this->db->affected_rows($a);
     }
     

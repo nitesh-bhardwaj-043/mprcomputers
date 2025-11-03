@@ -34,6 +34,8 @@ class App extends MX_Controller
 
             $this->load->view('expenses/ctrl_expenses.js');
             $this->load->view('complaints/ctrl_complaints.js');
+            $this->load->view('fcomplaints/ctrl_fcomplaints.js');
+            $this->load->view('dealership/ctrl_dealership.js');
         }
         else redirect('login');
     }

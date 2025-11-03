@@ -1,5 +1,5 @@
 //blank line is required
-app.controller("ctrl_complaints", function ($scope, $http) {
+app.controller("ctrl_fcomplaints", function ($scope, $http) {
   $http.get("login/check_valid_session").success(function (data) {
     if (data != 1) {
       window.location.assign('<?=site_url("login")?>');
@@ -7,20 +7,20 @@ app.controller("ctrl_complaints", function ($scope, $http) {
   });
 
   $scope.loader = function () {
-    $http.get("complaints/view_data").success(function (data) {
+    $http.get("fcomplaints/view_data").success(function (data) {
       $scope.datadb = data;
     });
   };
 
   $scope.loader();
   $scope.update_call = function (y) {
-    $("#complaintsModal").modal("show");
+    $("#fcomplaintsModal").modal("show");
     $scope.x = y;
     $scope.x.status = y.status == "1";
   };
 
   $scope.close_modal = function () {
-    $("#complaintsModal").modal("hide");
+    $("#fcomplaintsModal").modal("hide");
     $scope.filter_new();
   };
 
@@ -33,7 +33,7 @@ app.controller("ctrl_complaints", function ($scope, $http) {
     // console.log(y);
     $("#form1").ajaxForm({
       type: "POST",
-      url: "complaints/save_data",
+      url: "fcomplaints/save_data",
       beforeSend: function () {
         $("#submitbtn").attr("disabled", true);
         $("#webprogress").css("display", "inline");
@@ -45,11 +45,11 @@ app.controller("ctrl_complaints", function ($scope, $http) {
           messages(
             "success",
             "Success!",
-            "Complaint details Saved Successfully",
+            "Complaints details Saved Successfully",
             3000
           );
           $scope.filter_new();
-          $("#complaintsModal").modal("hide");
+          $("#fcomplaintsModal").modal("hide");
         } else if (data == "0") {
           messages("warning", "Info!", "No Data Affected", 3000);
         } else {
@@ -62,20 +62,20 @@ app.controller("ctrl_complaints", function ($scope, $http) {
   };
   $scope.delete_data = function (c_id) {
     if (
-      confirm("Deleting complaints details may hamper your data associated with it.")
+      confirm("Deleting fcomplaints details may hamper your data associated with it.")
     ) {
       if (confirm("Are you Sure to DELETE ??")) {
-        $http.get("complaints/delete_data?c_id=" + c_id).success(function (data) {
+        $http.get("fcomplaints/delete_data?c_id=" + c_id).success(function (data) {
           console.log(data);
           if (data == "1") {
             messages(
               "success",
               "Success!",
-              "Complaint details Deleted Successfully",
+              "Complaints details Deleted Successfully",
               3000
             );
           } else {
-            messages("danger", "Warning!", "Complaint details not Deleted", 4000);
+            messages("danger", "Warning!", "Complaints details not Deleted", 4000);
           }
           $scope.loader();
         });

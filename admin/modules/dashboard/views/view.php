@@ -10,6 +10,13 @@
                 <div class="col-md-3 column" ui-sref="complaints">
                     <div class="feature-box shadow-sm text-center p-4 rounded bg-light-blue">
                         <span class="feature-icon text-blue"><i class="fa fa-archive fa-2x"></i></span>
+                        <h5 class="mt-2">Pending Complaints</h5>
+                        <label><b>{{complaints}}</b> items</label>
+                    </div>
+                </div>
+                <div class="col-md-3 column" ui-sref="fcomplaints">
+                    <div class="feature-box shadow-sm text-center p-4 rounded bg-light-blue">
+                        <span class="feature-icon text-blue"><i class="fa fa-archive fa-2x"></i></span>
                         <h5 class="mt-2">Complaints</h5>
                         <label><b>{{complaints}}</b> items</label>
                     </div>

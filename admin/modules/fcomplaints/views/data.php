@@ -7,7 +7,7 @@
 <div class="col-sm-12 well">
 	<div class="table_horizontal">
 		<div class="row">
-			<div class="col-xs-7 col-md-9">
+			<div class="col-12">
 				<div class="input-group custom_addon">
 					<div class="input-group-addon" style="box-shadow:none; -webkit-box-shadow:none;">
 						<i class="fa fa-search"></i>
@@ -15,11 +15,11 @@
 					<input type="text" ng-model="search_text" placeholder="Search here...">
 				</div>
 			</div>
-			<div class="col-xs-5 col-md-3 text-right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#complaintsModal">
+			<!-- <div class="col-xs-5 col-md-3 text-right">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fcomplaintsModal">
 					Add Complaint
 				</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="table-data">
@@ -35,6 +35,8 @@
 						<th>Qty</th>
 						<th>Complaint Number</th>
 						<th>Date</th>
+						<th>Days</th>
+						<th>Active</th>
 						<th style="width:85px">Action</th>
 					</tr>
 				</thead>
@@ -48,6 +50,7 @@
 						<td>{{y.qty}}</td>
 						<td>{{y.c_no}}</td>
 						<td>{{y.c_date}}</td>
+						<td>{{y.days_since}}</td>
 						<td>
 							<div style="height:25px;width:25px;border-radius:50%;background:red" ng-if="y.status == '0'">
 							</div>
@@ -75,7 +78,7 @@
 	</div>
 </div>
 
-<div class="modal fade" id="complaintsModal" tabindex="-1" role="dialog" aria-labelledby="complaintsModalLabel">
+<div class="modal fade" id="fcomplaintsModal" tabindex="-1" role="dialog" aria-labelledby="fcomplaintsModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 
@@ -83,7 +86,7 @@
 				<button type="button" class="close" ng-click="close_modal()">
 					<span aria-hidden="true">&times;</span>
 				</button>
-				<h4 class="modal-title" id="complaintsModalLabel">Add Review</h4>
+				<h4 class="modal-title" id="fcomplaintsModalLabel">Add Review</h4>
 			</div>
 
 			<div class="modal-body" style="max-height:70vh; overflow-y:auto;">

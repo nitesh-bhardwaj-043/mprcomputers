@@ -20,7 +20,15 @@
 			</li>
 
 			<li class="sidepadding"><a href="#/complaints" accesskey="n"><i class="fa fa-tags"></i>
+					<span class="menu-text">Pending Complaints</span><span class="selected"></span></a>
+			</li>
+
+			<li class="sidepadding"><a href="#/fcomplaints" accesskey="n"><i class="fa fa-tags"></i>
 					<span class="menu-text">Complaints</span><span class="selected"></span></a>
+			</li>
+
+			<li class="sidepadding"><a href="#/dealership" accesskey="n"><i class="fa fa-tags"></i>
+					<span class="menu-text">Dealership</span><span class="selected"></span></a>
 			</li>
 		</ul>
 	</aside>
