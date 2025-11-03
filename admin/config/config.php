@@ -22,8 +22,8 @@
  | a PHP script and you can easily do that on your own.
  |
  */
-//$config['base_url'] = 'https://move4u.com/';http://127.0.0.1/move4u/
 
+// $config['base_url'] = 'https://tawaniyas.com/';
 $config['base_url'] = 'http://127.0.0.1/mprcomputers/';
 /*
  |--------------------------------------------------------------------------
