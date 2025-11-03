@@ -3,19 +3,9 @@
 */
 
 :root {
-    --tone: #777C6D;
-    /* olive-gray */
-    --secondary: #B7B89F;
-    /* sand beige */
-    --muted: #CBCBCB;
-    /* light gray */
-    --bg: #EEEEEE;
-    /* page background */
-    --primary: #19183B;
-    /* deep dark */
-    --accent: #A1C2BD;
-    /* muted teal */
-    --text: #19183B;
+    --primary: #000;
+    --secondary: #18cb96;
+    --secondary-light: #94d2bd;
 }
 
 html,
@@ -24,7 +14,7 @@ body {
 }
 
 .brand{
-    color:#19183B ;
+    color:#c0e0d5 ;
 }
 body {
     box-sizing: border-box;
