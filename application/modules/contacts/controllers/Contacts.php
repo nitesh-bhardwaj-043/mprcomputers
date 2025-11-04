@@ -14,6 +14,14 @@ class Contacts extends MX_Controller
         $data['view_file'] = "contacts";
         echo Modules::run('template/layout2', $data);
     }
+    function complaint()
+    {
+        $data['title'] = "Contact Us | Get in Touch with Packers & Movers";
+        $data['description'] = "Reach out to us for queries, bookings, or support. Our team is ready to assist you with stress-free relocation solutions.";
+        $data['module'] = "contacts";
+        $data['view_file'] = "complaint";
+        echo Modules::run('template/layout2', $data);
+    }
 
 
     // function complaint()

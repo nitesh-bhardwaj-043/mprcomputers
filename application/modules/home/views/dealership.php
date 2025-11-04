@@ -17,7 +17,7 @@
 
       <!-- Right Form Section -->
       <div class="col-lg-6">
-        <form class="p-4 p-md-5 rounded-4 bg-white shadow-lg">
+        <form class="p-4 p-md-5 rounded-4 bg-white shadow-lg" method="post" id="dealershipform" onsubmit="return false">
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Firm Name</label>
@@ -48,6 +48,7 @@
               <input type="text" class="form-control" placeholder="Enter GST number" >
             </div>
           </div>
+          <div id="resultsdealership"></div>
           <div class="text-center mt-4">
             <button type="submit" class="btn-submit">Submit Details</button>
           </div>
