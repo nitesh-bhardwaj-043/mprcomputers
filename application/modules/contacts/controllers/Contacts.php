@@ -65,6 +65,22 @@ class Contacts extends MX_Controller
         }
     }
 
+   function complaint()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('phone', 'Mobile', 'required|trim|numeric|exact_length[10]');
+        if ($this->form_validation->run() == true) {
+            $this->load->model('contacts_mdl');
+            $check = $this->contacts_mdl->complaint();
+            if ($check == true) {
+          echo "1";
+            }
+        } else {
+            echo "<div class='alert alert-danger'>" . validation_errors() . "</div>";
+        }
+    }
+
     function newsletter()
     {
         $this->load->library('form_validation');

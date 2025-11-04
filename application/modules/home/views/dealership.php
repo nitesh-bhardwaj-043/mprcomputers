@@ -65,7 +65,7 @@
 
   .business-form-section {
     background: linear-gradient(rgba(20, 33, 61, 0.8), rgba(20, 33, 61, 0.8)),
-                url('<?= base_url() ?>assets/images/about/about.jpg')
+                url('<?= base_url() ?>assets/images/about/about.avif')
                 center/cover no-repeat;
     color: #fff;
   }

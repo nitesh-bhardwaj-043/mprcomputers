@@ -169,7 +169,7 @@
           <!-- Message Format -->
           <div class="bg-white p-3 rounded border mt-4">
             <pre class="mb-0" style="white-space: pre-line; font-family: 'Segoe UI', sans-serif;">
-<b>📋 Message Format:</b>
+<b>Message Format:</b>
 Name:
 Address:
 Pin Code:

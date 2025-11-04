@@ -22,6 +22,9 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url('contact-us') ?>">Feedback</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= site_url('complaint') ?>">Complaint</a>
+        </li>
       </ul>
     </div>
   </div>
