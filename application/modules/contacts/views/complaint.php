@@ -1,3 +1,34 @@
+<section id="slider" class="position-relative">
+  <!-- Background image with overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="z-index: 1;">
+    <img src="<?= base_url('assets/images/breadcrumb/breadcrumb.jpg') ?>" alt="Background"
+      class="w-100 h-100 object-fit-cover" style="opacity: 0.5;">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50" loading="lazy"></div>
+  </div>
+
+  <!-- Swiper Slider Content -->
+  <div class="swiper-container position-relative" style="z-index: 2;">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide text-center py-5">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-white">
+              <h1 class="fw-bold display-5 mb-3">Feedback Form</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center bg-transparent p-0">
+                  <li class="breadcrumb-item">
+                    <a href="<?= site_url() ?>" class="text-white text-decoration-none">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Feedback Form</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="complaint-form-section py-2" class="modal fade" id="complaintModal" tabindex="-1" aria-labelledby="qteModalLabel" aria-hidden="true">
   <div class="container">
     <div class="form-wrapper mx-auto shadow-lg bg-white rounded-4 p-4 p-md-5">

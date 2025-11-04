@@ -5,9 +5,9 @@ class Home extends MX_Controller
 {
     function error()
     {
-        $data['title'] = "Page Not Found | TravelEase";
-        $data['description'] = "Oops! The page you're looking for isn't available. Return to TravelEase and plan your next unforgettable journey with us.";
-        $data['keywords'] = "error page, travel booking error, TravelEase 404, travel site not found";
+        $data['title'] = "Page Not Found | Trusted Electronics Distributor Network";
+        $data['description'] = "Oops! The page you’re looking for doesn’t exist. Go back to our distributor network and explore leading electronics brands, product installations, and customer support options.";
+        $data['keywords'] = "electronics distributor error, 404 page, distributor not found, electronics supply network, home appliances distributor support";
 
         $data['module'] = "home";
         $data['view_file'] = "error";
@@ -16,9 +16,10 @@ class Home extends MX_Controller
 
     function index()
     {
-        $data['title'] = "Plan Your Perfect Trip | Flight, Hotel & Tour Bookings | TravelEase";
-        $data['description'] = "Explore India and beyond with TravelEase! Find the best flight deals, holiday packages, and hotel bookings. Start your dream journey effortlessly with trusted travel experts.";
-        $data['keywords'] = "travel booking, flight deals, hotel booking, India tour packages, international trips, affordable flights, TravelEase tours, holiday planner";
+        $data['title'] = "India’s Leading Electronics Distributor | Multi-Brand Product Supply, Demo & Installation Support";
+        $data['description'] = "We are a trusted multi-brand electronics distributor in India, connecting top brands with customers. Explore a wide range of LED TVs, home appliances, and smart products. Get demos, installations, and after-sales support—all in one place.";
+        $data['keywords'] = "electronics distributor India, LED TV wholesaler, home appliance distributor, multi-brand electronics supplier, demo and installation service, electronics dealer network, after-sales support India, B2B and B2C electronics supply";
+
         $data['module'] = "home";
         $data['view_file'] = "home";
         echo Modules::run('template/layout1', $data);
@@ -26,9 +27,10 @@ class Home extends MX_Controller
 
     public function oldurl_to_newurl()
     {
-        // Example of redirection for old URLs (SEO friendly)
-        // if (@$this->uri->segment(1) == "packers-movers-bihar-india") {
-        //     redirect("bihar", 'location', 301);
+        // Example: Redirect old URLs to new ones (SEO-friendly redirection)
+        // if (@$this->uri->segment(1) == "old-electronics-page") {
+        //     redirect("electronics-distributor", 'location', 301);
         // }
     }
 }
+?>
