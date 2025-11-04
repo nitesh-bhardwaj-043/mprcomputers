@@ -51,14 +51,14 @@ class MX_Controller
         $this->load = clone load_class('Loader');
         $this->load->initialize($this);
 
-        $this->comp['phone'] = '+91 91664 42597';
-        $this->comp['phonehtml'] = 'tel:+91 91664 42597';
-        $this->comp['supportmail'] = 'support@info.in';
-        $this->comp['replyToMail'] = 'info@info.in';
-        $this->comp['mail'] = 'info@gmail.com';
-        $this->comp['mailhtml'] = "mailto:info@gmail.com";
-        $this->comp['company3'] = 'HighCity';
-        $this->comp['companydomain'] = 'highcity.com';
+        $this->comp['phone'] = '+91 9800044390';
+        $this->comp['phonehtml'] = 'tel:+91 9800044390';
+        $this->comp['supportmail'] = 'bhanwarlaal@gmail.com';
+        $this->comp['replyToMail'] = 'bhanwarlaal@gmail.com';
+        $this->comp['mail'] = 'bhanwarlaal@gmail.com';
+        $this->comp['mailhtml'] = "mailto:bhanwarlaal@gmail.com";
+        $this->comp['company3'] = 'MPR Computers';
+        $this->comp['companydomain'] = 'mprcomputers.com';
 
         $this->comp['facebookhtml'] = "";
         $this->comp['youtubehtml'] = "";
@@ -67,21 +67,21 @@ class MX_Controller
         $this->comp['linkedinhtml'] = "";
         $this->comp['whatsapphtml'] = "";
 
-        $this->comp['address'] = "<address>M.G Marg Gangtok, Sikkim</address>";
-        $this->comp['address1'] = "M.G Marg";
-        $this->comp['address2'] = "Gangtok";
-        $this->comp['addressRegion'] = "Sikkim";
-        $this->comp['postalCode'] = "737101";
-        $this->comp['companystate'] = "Sikkim";
-        $this->comp['themeColor'] = "#19183B";
+        $this->comp['address'] = "<address>City Plaza , opposite zudio , Payel more , Sevoke Road ,Siliguri -734001</address>";
+        $this->comp['address1'] = "City Plaza";
+        $this->comp['address2'] = "Siliguri";
+        $this->comp['addressRegion'] = "West Bengal";
+        $this->comp['postalCode'] = "734001";
+        $this->comp['companystate'] = "West Bengal";
+        $this->comp['themeColor'] = "#fca311";
 
         $this->comp['sku'] = "PM28980";
         $this->comp['mpn'] = "JPM28980";
         // Review
         $this->comp['ratingValue'] = "4.8";
         $this->comp['ratingCount'] = "1839";
-        $this->comp['datePublished'] = "1 November, 2025";
-        $this->comp['reviewBody'] = "HighCity provided excellent service.";
+        $this->comp['datePublished'] = "4 November, 2025";
+        $this->comp['reviewBody'] = "MPR Computers provided excellent service.";
         $this->comp['reviewperson'] = "Nitesh Bhardwaj";
 
         /* autoload module items */

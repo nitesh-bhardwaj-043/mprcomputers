@@ -4,9 +4,9 @@
     <div class="row">
       <!-- Brand Info -->
       <div class="col-lg-6 mb-4">
-        <h3 class="footer-brand mb-3">MPR Computers</h3>
+        <span class="footer-brand mb-3 fs-4">MPR Computers</span>
         <p class="footer-text">
-          Building technology with trust that grows. We’re committed to providing the best computer solutions and services with integrity and innovation.
+          We bring technology closer to you with reliable distribution, genuine service, and a promise of lasting trust.
         </p>
         <div class="mt-3 d-flex gap-3">
           <a href="https://facebook.com/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -18,11 +18,11 @@
 
       <!-- Contact Info -->
       <div class="col-lg-6 col-md-6 mb-4">
-        <h4 class="footer-heading mb-3">Contact Us</h4>
+        <span class="footer-heading mb-3 fs-4">Contact Us</span>
         <ul class="list-unstyled footer-list">
-          <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-secondary"></i>M.G. Marg, Gangtok, Sikkim</li>
-          <li class="mb-2"><i class="fas fa-phone me-2 text-secondary"></i>+91 91664 42597</li>
-          <li class="mb-2"><i class="fas fa-envelope me-2 text-secondary"></i>info@mprcomputers.com</li>
+          <li class="mb-2"><i class="fas fa-map-marker-alt me-2 text-secondary"></i>City Plaza , opposite zudio , Payel more , Sevoke Road ,Siliguri -734001</li>
+          <li class="mb-2"><i class="fas fa-phone me-2 text-secondary"></i><a href="tel:+919800043390" class="text-secondary">+91 9800044390</a></li>
+          <li class="mb-2"><i class="fas fa-envelope me-2 text-secondary"></i><a href="mailto:bhanwarlaal@gmail.com" class="text-secondary">bhanwarlaal@gmail.com</a></li>
         </ul>
       </div>
     </div>
@@ -31,7 +31,7 @@
 
     <!-- Bottom Section -->
     <div class="text-center pb-3">
-      <p class="mb-0">&copy; 2025 MPR Computers. All Rights Reserved.</p>
+      <p class="mb-0">&copy; 2025 techelevatr. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
@@ -39,10 +39,10 @@
 <!-- Footer Styling -->
 <style>
   :root {
-    --primary: #000;
-    --secondary: #18cb96;
-    --secondary-light: #94d2bd;
-    --text-light: #f5f5f5;
+    --primary: #14213d;
+    --secondary: #fca311;
+    --secondary-light: #000;
+    --primary-light: #ffff;
   }
 
   .footer-section {
@@ -87,7 +87,7 @@
   }
 
   .footer-text {
-    color: var(--secondary-light);
+    color: #fff;
     max-width: 500px;
   }
 
