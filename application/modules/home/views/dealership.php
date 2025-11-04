@@ -21,42 +21,80 @@
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Firm Name</label>
-              <input type="text" class="form-control" placeholder="Enter firm name" >
+              <input type="text" name="f_name" class="form-control" placeholder="Enter firm name" >
             </div>
             <div class="col-md-6">
               <label class="form-label">Proprietor / Partnership</label>
-              <input type="text" class="form-control" placeholder="Enter proprietor or partnership" >
+              <input type="text" name="p_name" class="form-control" placeholder="Enter proprietor or partnership" >
             </div>
             <div class="col-12">
               <label class="form-label">Address</label>
-              <textarea class="form-control" rows="2" placeholder="Enter address" ></textarea>
+              <textarea class="form-control" name="address" rows="2" placeholder="Enter address" ></textarea>
             </div>
             <div class="col-md-6">
               <label class="form-label">Pincode</label>
-              <input type="text" class="form-control" maxlength="6" placeholder="Enter pincode" >
+              <input type="text" name="pincode" class="form-control" maxlength="6" placeholder="Enter pincode" >
             </div>
             <div class="col-md-6">
               <label class="form-label">Mobile Number</label>
-              <input type="tel" class="form-control" maxlength="10" placeholder="Enter mobile number" >
+              <input type="tel" name="p_no" class="form-control" maxlength="10" placeholder="Enter mobile number" >
             </div>
             <div class="col-md-6">
               <label class="form-label">PAN Number</label>
-              <input type="text" class="form-control" placeholder="Enter PAN number" >
+              <input type="text" name="pan" class="form-control" placeholder="Enter PAN number" >
             </div>
             <div class="col-md-6">
               <label class="form-label">GST Number</label>
-              <input type="text" class="form-control" placeholder="Enter GST number" >
+              <input type="text" name="gst" class="form-control" placeholder="Enter GST number" >
             </div>
           </div>
           <div id="resultsdealership"></div>
           <div class="text-center mt-4">
-            <button type="submit" class="btn-submit">Submit Details</button>
+            <button id="submitbtndealership" type="submit" class="btn-submit">Submit Details</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
+<script type="text/javascript">
+    $(function () {
+        $('#submitbtndealership').click(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('home/dealership') ?>",
+                data: $("#dealershipform").serialize(),
+                beforeSend: function () {
+                    $('#resultsdealership').html('<p style="color:green;">Please wait...</p>');
+                },
+                success: function (data) {
+                    $('#resultsdealership').empty();
+                    if (data == '1') {
+                        data = "<div class='alert alert-success'><p style='color:green;'>Thank you! Your request successfully submitted. We'll respond soon.</p></div>";
+                        $("#dealershipform").trigger('reset');
+                    }
+                    $('#resultsdealership').html(data);
+                    setTimeout(function() {
+                        $('#resultsdealership').fadeOut('slow');
+                    }, 4000);
+                },
+                error: function (xhr, status, error) {
+                    let errorMsg = `
+                        <div class="alert alert-danger">
+                        <strong>Request Failed!</strong><br>
+                        Status: ${status}<br>
+                        Error: ${error}<br>
+                        Response: ${xhr.responseText}
+                        </div>
+  `;
+                    $('#resultsdealership').html(errorMsg);
+                }
+            });
+        });
+    });
+</script>
 
 <style>
   :root {

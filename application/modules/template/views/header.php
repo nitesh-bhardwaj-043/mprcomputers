@@ -146,7 +146,7 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <link rel="stylesheet" href="<?= base_url()?>assets/css/custom_style.css">
-  <script src="<?= base_url()?>assets/js/jquery-3.7.1.min.js"></script>
+  <script src="<?= base_url()?>assets/js/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>

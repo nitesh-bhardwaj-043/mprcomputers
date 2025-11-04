@@ -24,6 +24,27 @@ class Home extends MX_Controller
         echo Modules::run('template/layout1', $data);
     }
 
+    function dealership()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('f_name', 'Firm Name', 'required|trim');
+        $this->form_validation->set_rules('p_name', 'Proprietor / Partnership', 'required|trim');
+        $this->form_validation->set_rules('address', 'Address', 'required|trim');
+        $this->form_validation->set_rules('pincode', 'Pincode', 'required|trim');
+        $this->form_validation->set_rules('p_no', 'Mobile Number', 'required|trim');
+        $this->form_validation->set_rules('pan', 'Pan Number', 'trim');
+        $this->form_validation->set_rules('gst', 'Gst Number', 'trim');
+        if ($this->form_validation->run() == true) {
+            $this->load->model('home_mdl');
+            $check = $this->home_mdl->complaint();
+            if ($check == true) {
+                echo "1";
+            }
+        } else {
+            echo "<div class='alert alert-danger' style='color:white;'>" . validation_errors() . "</div>";
+        }
+    }
+
     public function oldurl_to_newurl()
     {
         // Example of redirection for old URLs (SEO friendly)
