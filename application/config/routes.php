@@ -6,7 +6,7 @@ $route['search'] = 'home/search';
 $route["photo-gallery"]="gallery/photo_gallery";
 $route["(:any).htm"]="home/error";
 $route["contact-us"]="contacts/contacts";
-$route["complaint"]="complaint/contacts";
+$route["complaint"]="contacts/complaint";
 $route["packers-movers-(:any)-india"]="packers_movers/state_services/$1";
 $route["(:any)-packers-movers-(:any)"]="packers_movers/city/$2/$1";
 
