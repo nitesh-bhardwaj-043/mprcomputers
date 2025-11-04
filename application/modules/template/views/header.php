@@ -12,7 +12,7 @@
   }
   if (!@$city) $city = "$addressRegion";
   if (!@$state) $state = "$companystate";
-  if (!@$img) $img = base_url('') . "assets/images/logo/logo.png";
+  if (!@$img) $img = base_url('') . "assets/images/logo/favicon.png";
   $url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   $url = ($url == site_url('home')) ? site_url() : strtolower($url);
  ?>
@@ -48,9 +48,9 @@
   <meta name="revisit-after" content="weekly"/>
   <meta name="distribution" content="global"/>
   <meta name="language" content="en"/>
-  <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo/logo2.png')?>">
-  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/logo2.png')?>">
-  <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo/logo2.png')?>">
+  <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo/favicon.png')?>">
+  <link rel="shortcut icon" href="<?= base_url('assets/images/logo/favicon.png')?>">
+  <link rel="apple-touch-icon" href="<?= base_url('assets/images/logo/favicon.png')?>">
 
   <script type="application/ld+json">
     {
