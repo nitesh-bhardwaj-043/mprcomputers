@@ -4,31 +4,33 @@ class Contacts_mdl extends CI_Model
     function __construct()
     {
         parent::__construct();
-        // $this->load->database();
+        $this->load->database();
     }
 
-    // public function bookings()
-    // {
-    //     $name = $this->input->post('name');
-    //     $email = $this->input->post('email');
-    //     $phone = $this->input->post('phone');
-    //     $mfrom = $this->input->post('mfrom');
-    //     $mto = $this->input->post('mto');
-    //     $msg = $this->input->post('message');
+    public function complaint()
+    {
+        $c_name = $this->input->post('c_name');
+        $f_name = $this->input->post('f_name');
+        $product = $this->input->post('product');
+        $qty = $this->input->post('qty');
+        $c_no = $this->input->post('c_no');
+        $c_date = $this->input->post('c_date');
+        $city = $this->input->post('city');
 
-    //     $inserted = $this->db->insert('bookings', array(
-    //         "name" => $name,
-    //         "email" => $email,
-    //         "phone" => $phone,
-    //         "mfrom" => $mfrom,
-    //         "mto" => $mto,
-    //         "msg" => $msg
-    //     ));
+        $inserted = $this->db->insert('complaints', array(
+            "c_name" => $c_name,
+            "f_name" => $f_name,
+            "product" => $product,
+            "qty" => $qty,
+            "c_no" => $c_no,
+            "city" => $city,
+            "c_date" => $c_date
+        ));
 
 
-    //     if ($inserted)
-    //         return true;
-    // }
+        if ($inserted)
+            return true;
+    }
 
    
 }

@@ -28,21 +28,31 @@ class Contacts extends MX_Controller
         echo Modules::run('template/layout2', $data);
     }
 
-    // Example backend process for complaint form submission
-    // function complaint()
-    // {
-    //     $this->load->library('form_validation');
-    //     $this->form_validation->set_rules('name', 'Name', 'required|trim');
-    //     $this->form_validation->set_rules('phone', 'Mobile', 'required|trim|numeric|exact_length[10]');
-    //     if ($this->form_validation->run() == true) {
-    //         $this->load->model('contacts_mdl');
-    //         $check = $this->contacts_mdl->complaint();
-    //         if ($check == true) {
-    //             echo "1";
-    //         }
-    //     } else {
-    //         echo "<div class='alert alert-danger'>" . validation_errors() . "</div>";
-    //     }
-    // }
+    function complaintform()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('c_name', 'Customer Name', 'required|trim');
+        $this->form_validation->set_rules('f_name', 'Firm Name', 'required|trim');
+        $this->form_validation->set_rules('product', 'Product', 'required|trim');
+        $this->form_validation->set_rules('qty', 'Quantity', 'required|trim');
+        $this->form_validation->set_rules('c_no', 'Complaint Number', 'required|trim');
+        $this->form_validation->set_rules('c_date', 'Complaint Date', 'required|trim');
+        $this->form_validation->set_rules('city', 'City', 'required|trim');
+        if ($this->form_validation->run() == true) {
+            $this->load->model('contacts_mdl');
+            $check = $this->contacts_mdl->complaint();
+            if ($check == true) {
+                echo "1";
+            }
+        } else {
+            $errors = validation_errors('<li>', '</li>');
+            echo "<div class='alert alert-danger validation-error'>
+                    <strong><i class='fa fa-exclamation-circle'></i> Please correct the following:</strong>
+                    <ul class='mt-2 mb-0'>
+                        {$errors}
+                    </ul>
+                  </div>";
+        }
+    }
 }
 ?>

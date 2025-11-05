@@ -16,20 +16,18 @@
       <div class="col-lg-8">
         <div class="row g-4">
           <!-- Member 1 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member1.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Rahul Mehta</span>
-              <p class="team-role">Founder & CEO</p>
+              <span class="team-name d-block">Bhawar Lal Thory</span>
+              <p class="team-role">Director</p>
             </div>
           </div>
 
           <!-- Member 2 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member2.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Sneha Kapoor</span>
-              <p class="team-role">Operations Head</p>
+              <span class="team-name d-block">Manish Thory</span>
+              <p class="team-role">Director</p>
             </div>
           </div>
 

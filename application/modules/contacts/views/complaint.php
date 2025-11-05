@@ -34,39 +34,80 @@
     <div class="form-wrapper mx-auto shadow-lg bg-white rounded-4 p-4 p-md-5">
       <span class="text-center fw-bold mb-4 text-dark fs-4">Complaint Registration</span>
 
-      <form id="complaintForm" class="row g-3">
+      <form id="complaintForm" class="row g-3" method="post" onsubmit="return false">
         <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Customer Name *" >
+          <input type="text" name="c_name" class="form-control" placeholder="Customer Name">
         </div>
         <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Product *" >
+          <input type="text" name="f_name" class="form-control" placeholder="Firm Name">
         </div>
         <div class="col-md-4">
-          <input type="number" class="form-control" placeholder="Quantity *" >
+          <input type="text" name="product" class="form-control" placeholder="Product">
+        </div>
+        <div class="col-md-4">
+          <input type="number" name="qty" class="form-control" placeholder="Quantity">
+        </div>
+        <div class="col-md-4">
+          <input type="text" name="c_no" class="form-control" placeholder="Complaint Number">
+        </div>
+        <div class="col-md-4">
+          <input type="date" name="c_date" class="form-control">
         </div>
 
-        <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Complaint Number *" >
-        </div>
-        <div class="col-md-4">
-          <input type="date" class="form-control" >
-        </div>
-        <div class="col-md-4">
-          <input type="text" class="form-control" placeholder="Firm Name *" >
-        </div>
 
         <div class="col-md-12">
-          <input type="text" class="form-control" placeholder="City *" >
+          <input type="text" name="city" class="form-control" placeholder="City">
         </div>
 
+        <div id="resultcomplaintform"></div>
+
         <div class="col-12 text-center mt-3">
-          <button type="submit" class="btn btn-success px-4 py-2 rounded-pill me-2">Submit</button>
+          <button type="submit" id="submitbtncomplaintForm" class="btn btn-success px-4 py-2 rounded-pill me-2">Submit</button>
           <button type="reset" class="btn btn-outline-secondary px-4 py-2 rounded-pill">Clear</button>
         </div>
       </form>
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  $(function() {
+    $('#submitbtncomplaintForm').click(function(e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('contacts/complaintform') ?>",
+        data: $("#complaintForm").serialize(),
+        beforeSend: function() {
+          $('#resultcomplaintform').html('<p style="color:green;">Please wait...</p>');
+        },
+        success: function(data) {
+          $('#resultcomplaintform').empty();
+          if (data == "1") {
+            data = "<div class='alert alert-success'><p style='color:green;'>Thank you! Your quote request successfully submitted. We'll respond soon.</p></div>";
+            $("#complaintForm").trigger('reset');
+          }
+          $('#resultcomplaintform').html(data);
+          setTimeout(function() {
+            $('#resultcomplaintform').fadeOut('slow');
+          }, 4000);
+        },
+        error: function(xhr, status, error) {
+          let errorMsg = `
+          <div class="alert alert-danger">
+            <strong>Request Failed!</strong><br>
+            Status: ${status}<br>
+            Error: ${error}<br>
+            Response: ${xhr.responseText}
+          </div>
+  `;
+          $('#resultcomplaintform').html(errorMsg);
+        }
+      });
+    });
+  });
+</script>
 
 <style>
   .complaint-form-section {
@@ -111,41 +152,3 @@
     }
   }
 </style>
-<script type="text/javascript">
-  $(function () {
-    $('#submitbtnquoteform').click(function (e) {
-      e.preventDefault();
-
-      $.ajax({
-        type: "POST",
-        url: "<?php echo site_url('contacts/bookings') ?>",
-        data: $("#quoteform").serialize(),
-        beforeSend: function () {
-          $('#resultquotefrom').html('<p style="color:green;">Please wait...</p>');
-        },
-        success: function (data) {
-          $('#resultquotefrom').empty();
-          if (data == '1') {
-            data = "<div class='alert alert-success'><p style='color:green;'>Thank you! Your quote request successfully submitted. We'll respond soon.</p></div>";
-            $("#quoteform").trigger('reset');
-          }
-          $('#resultquotefrom').html(data);
-          setTimeout(function() {
-           $('#resultquotefrom').fadeOut('slow');
-          }, 4000);
-        },
-        error: function (xhr, status, error) {
-          let errorMsg = `
-          <div class="alert alert-danger">
-            <strong>Request Failed!</strong><br>
-            Status: ${status}<br>
-            Error: ${error}<br>
-            Response: ${xhr.responseText}
-          </div>
-  `;
-          $('#resultquotefrom').html(errorMsg);
-        }
-      });
-    });
-  });
-</script>

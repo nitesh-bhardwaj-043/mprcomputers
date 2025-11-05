@@ -3,13 +3,13 @@ class Home_mdl extends CI_Model
 {
 
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
-	}
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->database();
+    }
 
-	  public function dealership()
+    public function dealership()
     {
         $f_name = $this->input->post('f_name');
         $p_name = $this->input->post('p_name');

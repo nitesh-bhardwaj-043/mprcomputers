@@ -21,31 +21,31 @@
           <div class="row g-3">
             <div class="col-md-6">
               <label class="form-label">Firm Name</label>
-              <input type="text" name="f_name" class="form-control" placeholder="Enter firm name" >
+              <input type="text" name="f_name" class="form-control" placeholder="Enter firm name">
             </div>
             <div class="col-md-6">
               <label class="form-label">Proprietor / Partnership</label>
-              <input type="text" name="p_name" class="form-control" placeholder="Enter proprietor or partnership" >
+              <input type="text" name="p_name" class="form-control" placeholder="Enter proprietor or partnership">
             </div>
             <div class="col-12">
               <label class="form-label">Address</label>
-              <textarea class="form-control" name="address" rows="2" placeholder="Enter address" ></textarea>
+              <textarea class="form-control" name="address" rows="2" placeholder="Enter address"></textarea>
             </div>
             <div class="col-md-6">
               <label class="form-label">Pincode</label>
-              <input type="text" name="pincode" class="form-control" maxlength="6" placeholder="Enter pincode" >
+              <input type="text" name="pincode" class="form-control" maxlength="6" placeholder="Enter pincode">
             </div>
             <div class="col-md-6">
               <label class="form-label">Mobile Number</label>
-              <input type="tel" name="p_no" class="form-control" maxlength="10" placeholder="Enter mobile number" >
+              <input type="tel" name="p_no" class="form-control" maxlength="10" placeholder="Enter mobile number">
             </div>
             <div class="col-md-6">
               <label class="form-label">PAN Number</label>
-              <input type="text" name="pan" class="form-control" placeholder="Enter PAN number" >
+              <input type="text" name="pan" class="form-control" placeholder="Enter PAN number">
             </div>
             <div class="col-md-6">
               <label class="form-label">GST Number</label>
-              <input type="text" name="gst" class="form-control" placeholder="Enter GST number" >
+              <input type="text" name="gst" class="form-control" placeholder="Enter GST number">
             </div>
           </div>
           <div id="resultsdealership"></div>
@@ -58,42 +58,51 @@
   </div>
 </section>
 <script type="text/javascript">
-    $(function () {
-        $('#submitbtndealership').click(function (e) {
-            e.preventDefault();
+  $(function() {
+    $('#submitbtndealership').click(function(e) {
+      e.preventDefault();
 
-            $.ajax({
-                type: "POST",
-                url: "<?php echo site_url('home/dealership') ?>",
-                data: $("#dealershipform").serialize(),
-                beforeSend: function () {
-                    $('#resultsdealership').html('<p style="color:green;">Please wait...</p>');
-                },
-                success: function (data) {
-                    $('#resultsdealership').empty();
-                    if (data == '1') {
-                        data = "<div class='alert alert-success'><p style='color:green;'>Thank you! Your request successfully submitted. We'll respond soon.</p></div>";
-                        $("#dealershipform").trigger('reset');
-                    }
-                    $('#resultsdealership').html(data);
-                    setTimeout(function() {
-                        $('#resultsdealership').fadeOut('slow');
-                    }, 4000);
-                },
-                error: function (xhr, status, error) {
-                    let errorMsg = `
+      $('#resultsdealership').show().empty();
+      $('#submitbtndealership').prop('disabled', true);
+
+      $.ajax({
+        type: "POST",
+        url: "<?php echo site_url('home/dealership') ?>",
+        data: $("#dealershipform").serialize(),
+        beforeSend: function() {
+          $('#resultsdealership').html('<div class="alert alert-info">Please wait...</div>');
+        },
+        success: function(data) {
+          $('#resultcomplaintform').empty();
+          if (data == "1") {
+            data = "<div class='alert alert-success'><p style='color:green;'>Thank you! Your quote request successfully submitted. We'll respond soon.</p></div>";
+            $("#dealershipform").trigger('reset');
+          }
+          $('#resultsdealership').html(data);
+
+          $('#submitbtndealership').prop('disabled', false);
+
+          setTimeout(function() {
+            $('#resultsdealership').fadeOut('slow', function() {
+              $(this).show().empty();
+            });
+          }, 4000);
+
+        },
+        error: function(xhr, status, error) {
+          let errorMsg = `
                         <div class="alert alert-danger">
                         <strong>Request Failed!</strong><br>
                         Status: ${status}<br>
                         Error: ${error}<br>
                         Response: ${xhr.responseText}
-                        </div>
-  `;
-                    $('#resultsdealership').html(errorMsg);
-                }
-            });
-        });
+                        </div>`;
+          $('#resultsdealership').html(errorMsg);
+          $('#submitbtndealership').prop('disabled', false); // Re-enable on error too
+        }
+      });
     });
+  });
 </script>
 
 <style>
@@ -104,8 +113,7 @@
 
   .business-form-section {
     background: linear-gradient(rgba(20, 33, 61, 0.8), rgba(20, 33, 61, 0.8)),
-                url('<?= base_url() ?>assets/images/about/about.avif')
-                center/cover no-repeat;
+      url('<?= base_url() ?>assets/images/about/about.avif') center/cover no-repeat;
     color: #fff;
   }
 
@@ -143,5 +151,64 @@
     .business-form-section {
       text-align: center;
     }
+  }
+
+  /* Validation Error Styling */
+  .validation-error {
+    background-color: #fff2f2;
+    border-left: 4px solid #dc3545;
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .validation-error strong {
+    color: #dc3545;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+
+  .validation-error ul {
+    color: #555;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .validation-error ul li {
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .validation-error ul li:before {
+    content: "•";
+    color: #dc3545;
+    position: absolute;
+    left: 5px;
+  }
+
+  /* Alert Styling */
+  .alert {
+    border-radius: 8px;
+    margin: 15px 0;
+  }
+
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+  .alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
   }
 </style>

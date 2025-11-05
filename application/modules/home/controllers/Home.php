@@ -37,12 +37,18 @@ class Home extends MX_Controller
         $this->form_validation->set_rules('gst', 'Gst Number', 'trim');
         if ($this->form_validation->run() == true) {
             $this->load->model('home_mdl');
-            $check = $this->home_mdl->complaint();
+            $check = $this->home_mdl->dealership();
             if ($check == true) {
                 echo "1";
             }
         } else {
-            echo "<div class='alert alert-danger' style='color:white;'>" . validation_errors() . "</div>";
+            $errors = validation_errors('<li>', '</li>');
+            echo "<div class='alert alert-danger validation-error'>
+                    <strong><i class='fa fa-exclamation-circle'></i> Please correct the following:</strong>
+                    <ul class='mt-2 mb-0'>
+                        {$errors}
+                    </ul>
+                  </div>";
         }
     }
 
