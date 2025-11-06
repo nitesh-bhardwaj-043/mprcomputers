@@ -3,7 +3,7 @@
   <div class="container">
     <div class="hero-content-wrapper text-center">
       <h1 class="hero-main-heading"><span class="main">MPR</span> Computers</h1>
-      <p class="hero-subheading">We build trust that grows</p>
+      <p class="hero-subheading">We build trust that grows brands</p>
       <a href="<?= site_url('contact-us') ?>" class=" btn btn-slider"><span>Feedback</span></a>
       <a href="<?= site_url('complaint') ?>" class="btn btn-slider" >
   <span>Feedback Form</span>

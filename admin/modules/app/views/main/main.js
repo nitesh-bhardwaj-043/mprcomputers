@@ -46,6 +46,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "fcomplaints",
       controller: "ctrl_fcomplaints",
     })
+    .state("ccomplaints", {
+      url: "/ccomplaints",
+      templateUrl: "ccomplaints",
+      controller: "ctrl_ccomplaints",
+    })
     .state("dealership", {
       url: "/dealership",
       templateUrl: "dealership",

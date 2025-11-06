@@ -26,6 +26,9 @@
 			<li class="sidepadding"><a href="#/fcomplaints" accesskey="n"><i class="fa fa-tags"></i>
 					<span class="menu-text">Complaints</span><span class="selected"></span></a>
 			</li>
+			<li class="sidepadding"><a href="#/ccomplaints" accesskey="n"><i class="fa fa-tags"></i>
+					<span class="menu-text">Completed Complaints</span><span class="selected"></span></a>
+			</li>
 
 			<li class="sidepadding"><a href="#/dealership" accesskey="n"><i class="fa fa-tags"></i>
 					<span class="menu-text">Dealership</span><span class="selected"></span></a>

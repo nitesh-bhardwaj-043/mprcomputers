@@ -9,7 +9,7 @@
           Our team of professionals is dedicated to delivering reliable, high-quality distribution services.
           At MPR Computers, we believe in teamwork, trust, and transparency to grow together with our partners.
         </p>
-        <a href="#contact" class="btn-one mt-3"><span>Contact Us</span></a>
+        <!-- <a href="#contact" class="btn-one mt-3"><span>Contact Us</span></a> -->
       </div>
 
       <!-- Right Team Members -->
@@ -32,38 +32,38 @@
           </div>
 
           <!-- Member 3 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member3.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Amit Sharma</span>
+              <img src="assets/images/teams/member1.jpeg" alt="Team Member" class="team-img mb-3">
+              <span class="team-name d-block">Pradip Dhar</span>
               <p class="team-role">Sales & Marketing</p>
             </div>
           </div>
 
           <!-- Member 4 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member4.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Priya Nair</span>
-              <p class="team-role">Customer Relations</p>
+              <img src="assets/images/teams/member2.jpeg" alt="Team Member" class="team-img mb-3">
+              <span class="team-name d-block">Manoj Ray</span>
+              <p class="team-role">Sales & Marketing</p>
             </div>
           </div>
 
           <!-- Member 5 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member5.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Vikram Patel</span>
-              <p class="team-role">Product Manager</p>
+              <img src="assets/images/teams/member3.jpeg" alt="Team Member" class="team-img mb-3">
+              <span class="team-name d-block">Dipankar Das</span>
+              <p class="team-role">Sales & Marketing</p>
             </div>
           </div>
 
           <!-- Member 6 -->
-          <div class="col-md-6 col-lg-4">
+          <div class="col-md-6">
             <div class="team-card text-center p-4">
-              <img src="assets/images/team/member6.jpg" alt="Team Member" class="team-img mb-3">
-              <span class="team-name d-block">Anjali Singh</span>
-              <p class="team-role">Logistics Coordinator</p>
+              <img src="assets/images/teams/member4.jpeg" alt="Team Member" class="team-img mb-3">
+              <span class="team-name d-block">Suraj Basor</span>
+              <p class="team-role">Sales & Marketing</p>
             </div>
           </div>
         </div>

@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Groveus<?= date("D d M Y") ?></title>
+  <title>MPR Computers<?= date("D d M Y") ?></title>
 
   <link href="<?= base_url() ?>assets/admin/css/main.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo/app_fav.png" />
+  <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo/favicon.png" />
 
   <style>
     body {
@@ -62,7 +62,7 @@
     <h2 class="text-center">Welcome Administrator</h2>
 
     <div class="text-center" style="margin:20px 0;">
-      <img src="<?= base_url("assets/images/logo/logojewels.png") ?>" alt="logo" style="width:150px;">
+      <img src="<?= base_url("assets/images/logo/logo.png") ?>" alt="logo" style="width:150px;">
     </div>
 
     <form class="form-horizontal" action="<?= site_url('login/check'); ?>" method="post">

@@ -21,6 +21,13 @@
                         <label><b>{{complaints}}</b> items</label>
                     </div>
                 </div>
+                <div class="col-md-3 column" ui-sref="ccomplaints">
+                    <div class="feature-box shadow-sm text-center p-4 rounded bg-light-blue">
+                        <span class="feature-icon text-blue"><i class="fa fa-archive fa-2x"></i></span>
+                        <h5 class="mt-2">Completed Complaints</h5>
+                        <label><b>{{ccomplaints}}</b> items</label>
+                    </div>
+                </div>
 
                 <!-- Company Expenses -->
                 <div class="col-md-3 column" ui-sref="expenses">

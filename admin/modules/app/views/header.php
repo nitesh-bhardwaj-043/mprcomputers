@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $this->session->userdata('name'); ?> <?= date("D d M Y") ?></title>
-    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo/app_fav.png">
+    <link rel="icon" type="image/png" href="<?= base_url() ?>assets/images/logo/favicon.png">
     <link href="<?= base_url("assets") ?>/admin/css/main.css" rel="stylesheet">
     <style type="text/css">
         @media print {
@@ -33,7 +33,7 @@
         <header id="hoe-header" hoe-lpanel-effect="default">
             <div class="hoe-left-header">
                 <a href="#">
-                    <img id="logo1a" src="<?= base_url() ?>assets/images/logo/logojewels.png" style="display:inline-block;height: 50px;">
+                    <img id="logo1a" src="<?= base_url() ?>assets/images/logo/logo.png" style="display:inline-block;height: 50px;">
                     <span></span>
                 </a>
             </div>

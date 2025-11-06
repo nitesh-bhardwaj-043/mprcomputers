@@ -13,6 +13,7 @@ class Mdl_fcomplaints extends CI_Model
         if($where) 
             $this->db->where($where);
         $this->db->where('status',1);
+        $this->db->where('complete',0);
         $this->db->order_by('c_id',"desc");
         return $this->db->get( $this->table);
     }

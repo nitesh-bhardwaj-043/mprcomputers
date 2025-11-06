@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Mdl_complaints extends CI_Model
+class Mdl_ccomplaints extends CI_Model
 {
     private $table;
     function __construct()
@@ -12,8 +12,7 @@ class Mdl_complaints extends CI_Model
         $this->db->select($select);
         if($where) 
             $this->db->where($where);
-        $this->db->where('status',0);
-        $this->db->where('complete',0);
+        $this->db->where('complete',1);
         $this->db->order_by('c_id',"desc");
         return $this->db->get( $this->table);
     }
